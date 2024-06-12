@@ -54,6 +54,8 @@ header {
 .slider {
   display: flex;
   transition: transform 0.5s ease-in-out;
+  padding: 0 5px;
+  user-select: none;
 }
 
 .card {
@@ -89,11 +91,12 @@ header {
 .next {
   width: 40px;
   height: 40px;
+  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 14%;
+  top: 12%;
   background: #990051;
   color: white;
   border: none;
@@ -118,9 +121,12 @@ header {
 }
 
 #videoFrame {
-  width: 560px;
-  height: 315px;
+  width: 315px;
+  height: 560px;
+  display: block;
   border: none;
+  margin: 0 auto;
+  pointer-events: none;
 }
 
 /* Footer */

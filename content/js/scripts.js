@@ -2,52 +2,52 @@ const videos = [
   {
     image: "content/images/EjImgVideo.png",
     title: "Revear Natural Stone",
-    videoUrl: "https://www.youtube-nocookie.com/embed/GchuWflvgh8?controls=0&disablekb=1&rel=0&autoplay=1"
+    videoUrl: "https://www.youtube-nocookie.com/embed/Al3477ilPgs?controls=0&disablekb=1&rel=0&autoplay=1"
   },
   {
     image: "content/images/EjImgVideo.png",
     title: "Revear Natural Stone",
-    videoUrl: "https://www.youtube-nocookie.com/embed/7yW33hEFOfI?controls=0&disablekb=1&rel=0&autoplay=1"
+    videoUrl: "https://www.youtube-nocookie.com/embed/5k56KY5JHgs?controls=0&disablekb=1&rel=0&autoplay=1"
   },
   {
     image: "content/images/EjImgVideo.png",
     title: "Revear Natural Stone",
-    videoUrl: "https://www.youtube-nocookie.com/embed/Z5ztUhK_l1c?controls=0&disablekb=1&rel=0&autoplay=1"
+    videoUrl: "https://www.youtube-nocookie.com/embed/Al3477ilPgs?controls=0&disablekb=1&rel=0&autoplay=1"
   },
   {
     image: "content/images/EjImgVideo.png",
     title: "Revear Natural Stone",
-    videoUrl: "https://www.youtube-nocookie.com/embed/GchuWflvgh8?controls=0&disablekb=1&rel=0&autoplay=1"
+    videoUrl: "https://www.youtube-nocookie.com/embed/Al3477ilPgs?controls=0&disablekb=1&rel=0&autoplay=1"
   },
   {
     image: "content/images/EjImgVideo.png",
     title: "Revear Natural Stone",
-    videoUrl: "https://www.youtube-nocookie.com/embed/Z5ztUhK_l1c?controls=0&disablekb=1&rel=0&autoplay=1"
+    videoUrl: "https://www.youtube-nocookie.com/embed/Al3477ilPgs?controls=0&disablekb=1&rel=0&autoplay=1"
   },
   {
     image: "content/images/EjImgVideo.png",
     title: "Revear Natural Stone",
-    videoUrl: "https://www.youtube-nocookie.com/embed/Z5ztUhK_l1c?controls=0&disablekb=1&rel=0&autoplay=1"
+    videoUrl: "https://www.youtube-nocookie.com/embed/Al3477ilPgs?controls=0&disablekb=1&rel=0&autoplay=1"
   },
   {
     image: "content/images/EjImgVideo.png",
     title: "Revear Natural Stone",
-    videoUrl: "https://www.youtube-nocookie.com/embed/GchuWflvgh8?controls=0&disablekb=1&rel=0&autoplay=1"
+    videoUrl: "https://www.youtube-nocookie.com/embed/Al3477ilPgs?controls=0&disablekb=1&rel=0&autoplay=1"
   },
   {
     image: "content/images/EjImgVideo.png",
     title: "Revear Natural Stone",
-    videoUrl: "https://www.youtube-nocookie.com/embed/Z5ztUhK_l1c?controls=0&disablekb=1&rel=0&autoplay=1"
+    videoUrl: "https://www.youtube-nocookie.com/embed/Al3477ilPgs?controls=0&disablekb=1&rel=0&autoplay=1"
   },
   {
     image: "content/images/EjImgVideo.png",
     title: "Revear Natural Stone",
-    videoUrl: "https://www.youtube-nocookie.com/embed/Z5ztUhK_l1c?controls=0&disablekb=1&rel=0&autoplay=1"
+    videoUrl: "https://www.youtube-nocookie.com/embed/Al3477ilPgs?controls=0&disablekb=1&rel=0&autoplay=1"
   },
   {
     image: "content/images/EjImgVideo.png",
     title: "Revear Natural Stone",
-    videoUrl: "https://www.youtube-nocookie.com/embed/Z5ztUhK_l1c?controls=0&disablekb=1&rel=0&autoplay=1"
+    videoUrl: "https://www.youtube-nocookie.com/embed/Al3477ilPgs?controls=0&disablekb=1&rel=0&autoplay=1"
   }
 ];
 
@@ -74,23 +74,26 @@ function createCards() {
     slider.appendChild(card);
 
     if (index === 0) {
-      videoFrame.src = video.videoUrl;
-      videoFrame.onload = () => {
-        videoFrame.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
-      };
-      card.classList.add('active'); 
+      setVideoUrl(video.videoUrl);
+      card.classList.add('active');
       activeCard = card;
     }
   });
 }
 
-createCards();
+function setVideoUrl(url) {
+  videoFrame.src = url;
+  videoFrame.onload = () => {
+    videoFrame.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+  };
+}
 
+createCards();
 
 let currentIndex = 0;
 const totalCards = videos.length;
 const cardsToShow = 5;
-const cardWidth = 200 + 20;
+const cardWidth = 240;
 
 let isDragging = false;
 let startPosition = 0;
@@ -169,6 +172,9 @@ function nextSlide() {
   }
 }
 
+document.querySelector('.prev').addEventListener('click', prevSlide);
+document.querySelector('.next').addEventListener('click', nextSlide);
+
 document.addEventListener('DOMContentLoaded', () => {
   updateSlider();
 });
@@ -180,3 +186,9 @@ document.addEventListener('keydown', function (event) {
 });
 
 document.addEventListener('contextmenu', event => event.preventDefault());
+
+window.onload = function () {
+  if (videos.length > 0) {
+    setVideoUrl(videos[0].videoUrl);
+  }
+};
