@@ -92,7 +92,7 @@ createCards();
 
 window.onload = function() {
   if (videos.length > 0) {
-    setVideoUrl(convertToEmbedUrl(videos[0].videoUrl));
+    setVideoUrl(videos[0].videoUrl);
   }
 };
 
