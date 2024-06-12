@@ -37,7 +37,7 @@ header {
   align-self: flex-start;
   width: var(--max-width);
   height: 305px;
-  background-image: url("/content/images/Hero.png");
+  background-image: url("../images/Hero.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
