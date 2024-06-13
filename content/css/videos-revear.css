@@ -98,7 +98,7 @@ header {
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 6%;
+  top: 5.5%;
   background: #990051;
   color: white;
   border: none;
@@ -110,11 +110,11 @@ header {
 }
 
 .prev {
-  left: 0;
+  left: 5px;
 }
 
 .next {
-  right: 0;
+  right: 5px;
 }
 
 .video-container {
