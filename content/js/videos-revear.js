@@ -61,14 +61,14 @@ const videos = [
   },
 ];
 
-const slider = document.getElementById('slider');
+const swiperWrapper = document.getElementById('swiper-wrapper');
 const videoFrame = document.getElementById('videoFrame');
 let activeCard = null;
 
 function createCards() {
   videos.forEach((video, index) => {
     const card = document.createElement('div');
-    card.className = 'card';
+    card.className = 'card swiper-slide';
     card.style.backgroundImage = `url(${video.image})`;
     card.setAttribute('data-video-url', video.videoUrl);
     card.setAttribute('data-video-type', video.type);
@@ -84,7 +84,7 @@ function createCards() {
       card.classList.add('active');
       activeCard = card;
     });
-    slider.appendChild(card);
+    swiperWrapper.appendChild(card);
 
     if (index === 0) {
       setVideoUrl(video.videoUrl, video.type);
@@ -105,105 +105,21 @@ function setVideoUrl(url, type) {
 
 createCards();
 
+const swiper = new Swiper('.swiper', {
+  loop: true,
+  grabCursor: true,
+  slidesPerView: 5,
+  speed: 250,
+  loopFillGroupWithBlank: false,
+  loopedSlides: 4,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
+
 window.onload = function () {
   if (videos.length > 0) {
     setVideoUrl(videos[0].videoUrl, videos[0].type);
   }
 }
-
-let currentIndex = 0;
-const totalCards = videos.length;
-const cardsToShow = 5;
-const cardWidth = 240;
-
-function updateSlider() {
-  const translateValue = -currentIndex * cardWidth;
-  slider.style.transform = `translateX(${translateValue}px)`;
-}
-
-function prevSlide() {
-  if (currentIndex > 0) {
-    currentIndex--;
-    updateSlider();
-    prevTranslate = -currentIndex * cardWidth;
-  }
-}
-
-function nextSlide() {
-  if (currentIndex < totalCards - cardsToShow) {
-    currentIndex++;
-    updateSlider();
-    prevTranslate = -currentIndex * cardWidth;
-  }
-}
-
-document.querySelector('.prev').addEventListener('click', prevSlide);
-document.querySelector('.next').addEventListener('click', nextSlide);
-
-document.addEventListener('DOMContentLoaded', () => {
-  updateSlider();
-});
-
-let isDragging = false;
-let startPosition = 0;
-let currentTranslate = 0;
-let prevTranslate = 0;
-let animationID = 0;
-
-const sliderContainer = document.querySelector('.slider-container');
-
-sliderContainer.addEventListener('mousedown', startDrag);
-sliderContainer.addEventListener('touchstart', startDrag);
-
-sliderContainer.addEventListener('mouseup', endDrag);
-sliderContainer.addEventListener('mouseleave', endDrag);
-sliderContainer.addEventListener('touchend', endDrag);
-
-sliderContainer.addEventListener('mousemove', drag);
-sliderContainer.addEventListener('touchmove', drag);
-
-function startDrag(event) {
-  isDragging = true;
-  startPos = getPositionX(event);
-  animationID = requestAnimationFrame(animation);
-}
-
-function endDrag() {
-  isDragging = false;
-  cancelAnimationFrame(animationID);
-
-  const movedBy = currentTranslate - prevTranslate;
-
-  if (movedBy < -100 && currentIndex < totalCards - cardsToShow) {
-    currentIndex++;
-  } else if (movedBy > 100 && currentIndex > 0) {
-    currentIndex--;
-  }
-
-  updateSlider();
-  prevTranslate = currentTranslate;
-}
-
-function drag(event) {
-  if (isDragging) {
-    const currentPosition = getPositionX(event);
-    currentTranslate = prevTranslate + currentPosition - startPos;
-    slider.style.transform = `translateX(${currentTranslate}px)`;
-  }
-}
-
-function getPositionX(event) {
-  return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
-}
-
-function animation() {
-  if (isDragging) requestAnimationFrame(animation);
-}
-
-document.addEventListener('keydown', function (event) {
-  if (event.key === "Escape" || event.key === "Backspace" || event.key === "Alt") {
-    event.preventDefault();
-  }
-});
-
-document.addEventListener('contextmenu', event => event.preventDefault());

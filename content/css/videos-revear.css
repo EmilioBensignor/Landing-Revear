@@ -43,32 +43,31 @@ header {
   background-size: contain;
 }
 
-/* Slider */
+/* Swiper */
 
-.slider-container {
+.swiperWrapper {
   width: 100%;
   position: relative;
   overflow: hidden;
   margin: 20px auto;
 }
 
-.slider {
+.swiper {
   display: flex;
   transition: transform 0.5s ease-in-out;
-  padding: 0 5px;
-  user-select: none;
   padding: 0 20px;
+  user-select: none;
 }
 
 .card {
-  height: 123px;
+  height: 110px !important;
   flex: 0 0 190px;
-  display: flex;
+  display: flex !important;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   border-radius: 22px;
   filter: drop-shadow(0px 4px 4px 0px #00000040);
@@ -89,31 +88,32 @@ header {
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.prev,
-.next {
-  width: 40px;
-  height: 40px;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 5.5%;
+.swiper-button-prev,
+.swiper-button-next {
+  width: 40px !important;
+  height: 40px !important;
+  z-index: 1 !important;
+  top: 60% !important;
   background: #990051;
-  color: white;
-  border: none;
+  color: white !important;
   border-radius: 33px;
-  font-size: 1.5rem;
   box-shadow: 0px 1px 3px 0px #0000002E;
   transform: translateY(-50%);
   cursor: pointer;
+  margin-top: 0 !important;
 }
 
-.prev {
-  left: 5px;
+.swiper-button-prev::after,
+.swiper-button-next::after{
+  font-size: 1.5rem !important;
+  font-weight: 600;
 }
 
-.next {
+.swiper-button-prev {
+  left: 0px !important;
+}
+
+.swiper-button-next {
   right: 5px;
 }
 
