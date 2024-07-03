@@ -2,61 +2,61 @@ const videos = [
   {
     image: "content/images/DiferenciasEntreMarbleYRevex.png",
     title: "Diferencias entre Marble y Revex",
-    videoUrl: "https://www.youtube-nocookie.com/embed/m-LI-gu6B-0?controls=0&disablekb=1&rel=0&autoplay=1",
+    videoUrl: "https://www.youtube-nocookie.com/embed/f7-ZWkTGYWs?controls=0&disablekb=1&rel=0&autoplay=1",
     type: "short"
   },
   {
     image: "content/images/MarbleVerdeCemento.png",
     title: "Marble Verde Cemento",
-    videoUrl: "https://www.youtube-nocookie.com/embed/H9wAvG8GOmU?controls=0&disablekb=1&rel=0&autoplay=1",
+    videoUrl: "https://www.youtube-nocookie.com/embed/fVtOTiRqedY?controls=0&disablekb=1&rel=0&autoplay=1",
     type: "short"
   },
   {
     image: "content/images/naturalStoneParis.png",
     title: "Natural Stone Paris",
-    videoUrl: "https://www.youtube-nocookie.com/embed/2I98kOjsYZA?controls=0&disablekb=1&rel=0&autoplay=1",
+    videoUrl: "https://www.youtube-nocookie.com/embed/ufP4zJde7jk?controls=0&disablekb=1&rel=0&autoplay=1",
     type: "short"
   },
   {
     image: "content/images/naturalStoneGrey.png",
     title: "Natural Stone Grey",
-    videoUrl: "https://www.youtube-nocookie.com/embed/YDgBWyeSoYc?controls=0&disablekb=1&rel=0&autoplay=1",
+    videoUrl: "https://www.youtube-nocookie.com/embed/WXHlmNzAPqA?controls=0&disablekb=1&rel=0&autoplay=1",
     type: "short"
   },
   {
     image: "content/images/ConoceMasDeNaturalStone.png",
     title: "Conocé más de Natural Stone",
-    videoUrl: "https://www.youtube-nocookie.com/embed/2OJMCqeeoGY?controls=0&disablekb=1&rel=0&autoplay=1",
+    videoUrl: "https://www.youtube-nocookie.com/embed/iQbP9CdunKg?controls=0&disablekb=1&rel=0&autoplay=1",
     type: "short"
   },
   {
     image: "content/images/ComoAplicarBaseRevear.png",
     title: "Cómo aplicar Revear Base",
-    videoUrl: "https://www.youtube-nocookie.com/embed/Q29wEHJXblk?controls=0&disablekb=1&rel=0&autoplay=1",
+    videoUrl: "https://www.youtube-nocookie.com/embed/zk9iLdP6irU?controls=0&disablekb=1&rel=0&autoplay=1",
     type: "horizontal"
   },
   {
     image: "content/images/ComoAplicarRevearMarble.png",
     title: "Cómo aplicar Revear Marble",
-    videoUrl: "https://www.youtube-nocookie.com/embed/yFTj999qe6w?controls=0&disablekb=1&rel=0&autoplay=1",
+    videoUrl: "https://www.youtube-nocookie.com/embed/SgsdX98ZD-g?controls=0&disablekb=1&rel=0&autoplay=1",
     type: "horizontal"
   },
   {
     image: "content/images/ComoAplicarRevoquePlastico.png",
     title: "Cómo aplicar Revoque Plástico",
-    videoUrl: "https://www.youtube-nocookie.com/embed/6BgkeRUCGyQ?controls=0&disablekb=1&rel=0&autoplay=1",
+    videoUrl: "https://www.youtube-nocookie.com/embed/UYqeqX9dLHw?controls=0&disablekb=1&rel=0&autoplay=1",
     type: "horizontal"
   },
   {
     image: "content/images/ComoAplicarNaturalStone.png",
     title: "Cómo aplicar Natural Stone",
-    videoUrl: "https://www.youtube-nocookie.com/embed/K_SYd6rzIwk?controls=0&disablekb=1&rel=0&autoplay=1",
+    videoUrl: "https://www.youtube-nocookie.com/embed/G8iHYJE6MEE?controls=0&disablekb=1&rel=0&autoplay=1",
     type: "horizontal"
   },
   {
     image: "content/images/ComoAplicarRevearRevex.png",
     title: "Cómo aplicar Revear Revex",
-    videoUrl: "https://www.youtube-nocookie.com/embed/EJ2QI4Sm6so?controls=0&disablekb=1&rel=0&autoplay=1",
+    videoUrl: "https://www.youtube-nocookie.com/embed/GDbN_QZ-vl8?controls=0&disablekb=1&rel=0&autoplay=1",
     type: "horizontal"
   },
 ];
