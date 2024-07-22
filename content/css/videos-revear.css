@@ -11,7 +11,7 @@
 
 body {
   width: 100%;
-  height: 1920px;
+  height: 1810px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -46,7 +46,7 @@ header {
 /* Swiper */
 
 .swiperWrapper {
-  width: 100%;
+  width: 95%;
   position: relative;
   overflow: hidden;
   margin: 20px auto;
@@ -71,7 +71,7 @@ header {
   background-repeat: no-repeat;
   border-radius: 22px;
   filter: drop-shadow(0px 4px 4px 0px #00000040);
-  margin: 0 10px;
+  margin: 0 5px;
   cursor: pointer;
   transition: border 0.3s;
 }
@@ -163,13 +163,13 @@ header {
 }
 
 .redes div img {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
 }
 
 .sika {
   display: flex;
   justify-content: flex-end;
   background: #FFC510;
-  padding: 2rem 3rem;
+  padding: 1rem 3rem;
 }
